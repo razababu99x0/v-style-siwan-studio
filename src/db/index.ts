@@ -3,9 +3,6 @@ import { Pool } from "pg";
 
 const databaseUrl = process.env.DATABASE_URL;
 
-if (!databaseUrl) {
-  throw new Error("DATABASE_URL is required");
-}
 
 const globalForDb = globalThis as typeof globalThis & {
   __arenaNextJsPostgresqlPool?: Pool;
@@ -21,4 +18,5 @@ if (process.env.NODE_ENV !== "production") {
   globalForDb.__arenaNextJsPostgresqlPool = pool;
 }
 
-export const db = drizzle(pool);
+const connectedDb = drizzle(pool);
+export const db = databaseUrl ? connectedDb : new Proxy(connectedDb, { get() { throw new Error("Database is not configured. This storefront is in demo mode."); } });

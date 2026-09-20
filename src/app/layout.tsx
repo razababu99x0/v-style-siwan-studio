@@ -44,7 +44,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-ink font-sans text-mist antialiased">
+      <body className="min-h-screen bg-ink font-sans text-mist antialiased"><div role="note" style={{position:"fixed",bottom:0,left:0,right:0,zIndex:99999,textAlign:"center",padding:"6px 12px",background:"#111",color:"#fff",fontSize:12}}>Demo storefront · Orders and payments are unavailable</div>
         <div className="grain-overlay" aria-hidden />
         <Preloader />
         <SmoothScroll>
