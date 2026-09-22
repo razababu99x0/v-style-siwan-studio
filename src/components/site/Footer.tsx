@@ -206,6 +206,7 @@ export function Footer() {
           </p>
         </div>
 
+        <a href="https://dynamicdevelopments.vercel.app/" target="_blank" rel="noopener noreferrer" className="relative mt-4 inline-flex min-h-11 items-center text-sm text-cyan underline underline-offset-4 hover:text-mist">Developed by Dynamic Developments</a>
         <p className="mt-6 text-[0.68rem] leading-relaxed text-mute/80">
           Concept/demo site — replace brand assets before commercial use. Store details shown here are
           placeholders.
